@@ -1,0 +1,501 @@
+*,html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    min-height: 100vh;
+    margin: 0;
+    background: url('img/background.webp') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* FOTO */
+body {
+  margin: 0;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+.card-body {
+  width: 60%;
+  max-width: 800px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  transition: all 400ms;
+}
+
+.card {
+  flex: 1;
+  height: 100%;
+  transition: all 400ms;
+  cursor: pointer;
+  background: transparent;
+}
+.card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  flex: 1;
+  height: 100%;
+  transition: all 400ms;
+  cursor: pointer;
+  background: transparent;
+}
+.card:nth-child(odd) {
+  translate: 0 -20px;
+}
+.card:nth-child(even) {
+  translate: 0 20px;
+}
+.container:hover .card:not(:hover) {
+  filter: grayscale(100%);
+}
+.card:hover {
+  flex: 3;
+}
+/* FOTO END */
+
+
+/* LABEL */
+.container-label {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  display: flex;
+
+}
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+/* LABEL END */
+
+
+/* BUTTON */
+.container-button {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  display: flex;
+  gap: 15px;
+}
+.neon-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: all 0.4s ease;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Efek glow saat hover */
+.neon-button:hover {
+  box-shadow:
+    0 0 8px #0ff,
+    0 0 15px #0ff,
+    0 0 25px #0ff;
+}
+
+/* Animasi border mengalir (pseudo-element) */
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.8s ease;
+  z-index: -1;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+/* Feedback klik (opsional) */
+.click-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.2);
+  opacity: 0;
+  animation: pulse 0.5s ease-out;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(0.95); }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+/* BUTTON END */
+
+
+/* TEXT */
+.text {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;     
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 8px;
+  top: 0px;
+  right: 20px;
+  height: 100vh;
+  color: rgb(184, 205, 224);
+}
+/* TEXT END */
+
+/* PROFILE */
+.neon-card {
+  width: 300px;
+  max-width: 90%;
+  background: rgba(15, 15, 30, 0.7);
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 0 0 transparent;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.neon-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Gambar di dalam card */
+.neon-card img {
+  width: 100%;
+  height: 140px; 
+  object-fit: cover;
+  display: block;
+}
+
+/* Konten teks */
+.neon-card-content {
+  padding: 16px;
+  color: white;
+}
+
+.neon-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.neon-card p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Animasi sapuan cahaya (opsional saat hover) */
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.9s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.neon-card:hover::before {
+  left: 100%;
+}
+/* PROFILE END */
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.neon-card {
+  animation: zoomIn 1s ease forwards;
+}
+
+/* CONTAINER */
+.platform-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin-top: 120px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.neon-cardflatform {
+  position: relative;
+  width: 220px;
+  height: 330px;
+  background: rgba(15, 15, 30, 0.7);
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.neon-cardflatform:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Konten */
+.neon-cardflatform-content {
+  padding: 16px;
+  color: white;
+}
+
+.neon-cardflatform h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.neon-cardflatform p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Efek sapuan cahaya */
+.neon-cardflatform::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,255,255,0.2),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.neon-cardflatform:hover::before {
+  left: 100%;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.neon-cardflatform {
+  animation: zoomIn 2s ease forwards;
+}
+/* CARD END */
+
+/* Konten teks */
+.text-flatform {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 85px;
+  padding: 16px;
+  color: white;
+}
+
+.text-p {
+  user-select: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  top: 150px;
+  left: 10px;
+}
+/* Konten END */
+
+
+/* BUTTON FLATFORM*/
+.button-flatform {
+  text-decoration: none;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 280px;
+  left: 55px;
+  gap: 15px;
+}
+
+.block-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: all 0.4s ease;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* BUTTON END */
+
+/* IMAGE BULAT */
+.profile-img {
+  position: absolute;  
+  top: 20px;           
+  left: 65px;          
+  width: 80px;         
+  height: 80px;
+  border-radius: 50%;  
+  object-fit: cover;   
+  border: 3px solid #0ff;
+  box-shadow: 0 0 15px #0ff;
+}
+/* IMG BULAT END */
