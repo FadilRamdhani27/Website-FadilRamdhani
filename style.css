@@ -6,7 +6,6 @@
 
 body {
     display: flex;
-    position: fixed;
     justify-content: center;
     align-items: center;
     top: 0;
@@ -503,3 +502,4 @@ body {
   box-shadow: 0 0 15px #0ff;
 }
 /* IMG BULAT END */
+
