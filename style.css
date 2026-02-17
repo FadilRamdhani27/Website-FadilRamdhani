@@ -346,9 +346,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 20px;
   padding: 20px;
-  margin-top: 120px;
+  margin-top: 60px auto;
+  max-width: 1000px; 
   width: 100%;
   flex-wrap: wrap;
 }
@@ -356,8 +357,8 @@ body {
 /* CARD */
 .neon-cardflatform {
   position: relative;
-  width: 220px;
-  height: 330px;
+  width: 160px;
+  height: 250px;
   background: rgba(15, 15, 30, 0.7);
   border: 2px solid #0ff;
   border-radius: 12px;
@@ -436,7 +437,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 85px;
+  margin-top: 70px;
   padding: 16px;
   color: white;
 }
@@ -446,9 +447,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  margin-top: -5px;
   top: 150px;
-  left: 10px;
+  left: 5px;
 }
 /* Konten END */
 
@@ -460,8 +461,8 @@ body {
   position: absolute;
   justify-content: center;
   align-items: center;
-  top: 280px;
-  left: 55px;
+  top: 195px;
+  left: 25px;
   gap: 15px;
 }
 
@@ -488,15 +489,17 @@ body {
 
 /* IMAGE BULAT */
 .profile-img {
-  position: absolute;  
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-bottom: 15px;
+  position: absolute;
+  justify-content: center;
   top: 20px;           
-  left: 65px;          
-  width: 80px;         
-  height: 80px;
+  left: 45px;          
   border-radius: 50%;  
   object-fit: cover;   
   border: 3px solid #0ff;
   box-shadow: 0 0 15px #0ff;
 }
-
 /* IMG BULAT END */
