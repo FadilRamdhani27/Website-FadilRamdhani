@@ -13,16 +13,27 @@
   </div>
 <!-- TEXT END -->
 
-  <!-- Label -->
-<div class="container-label">
-<label class="burger" for="burger">
-  <input type="checkbox" id="burger">
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
+<!-- HAMBURGER -->
+<div class="menu-container">
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <div class="dropdown" id="dropdownMenu">
+    <a class="text-hamburger" href="index.html">Ke Halaman Awal</a>
+  </div>
 </div>
- <!-- Label END -->
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("dropdownMenu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
+<!-- HAMBURGER END -->
 
 
  <div class="container">
