@@ -394,66 +394,61 @@ body {
 
 /* BUTTON END */
 
-/* PESAN HOME */
-.home-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  margin-top: 60px auto;
-  max-width: 1000px; 
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-/* CARD */
-.neon-cardhome {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 455px;
-  width: 410px;
-  height: 240px;
+/* Pesan Home */
+.neon-Home {
+  width: 400px;
+  height: 210px;
+  max-width: 90%;
   background: rgba(15, 15, 30, 0.7);
   border: 2px solid #0ff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.5);
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 0 0 transparent;
   transition: all 0.4s ease;
+  position: relative;
+  user-select: none;
 }
 
-/* Hover effect */
-.neon-cardhome:hover {
-  transform: translateY(-6px);
+.neon-Home:hover {
+  transform: translateY(-4px);
   box-shadow:
     0 0 10px #0ff,
     0 0 20px #0ff,
     0 0 30px rgba(0, 255, 255, 0.3);
 }
 
-/* Konten */
-.neon-cardhome-content {
+/* Konten teks */
+.neon-Home-content {
   padding: 16px;
   color: white;
 }
 
-.neon-cardhome h3 {
+.neon-Home h3 {
   margin: 0 0 8px 0;
   font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.neon-cardhome p {
+.neon-Home p {
+  position: absolute;
+  justify-content: center;
+  top: 100px;
+  left: 15px;
   margin: 0;
   font-size: 14px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
 }
 
-/* Efek sapuan cahaya */
-.neon-cardhome::before {
+.highlight {
+    color: #8b5e3c;
+}
+
+/* Animasi sapuan cahaya (opsional saat hover) */
+.neon-Home::before {
   content: '';
   position: absolute;
   top: 0;
@@ -463,64 +458,20 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0,255,255,0.2),
+    rgba(0, 255, 255, 0.2),
     transparent
   );
-  transition: left 0.8s ease;
+  transition: left 0.9s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.neon-cardhome:hover::before {
+.neon-Home:hover::before {
   left: 100%;
 }
+/* Pesan Home End */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-body {
-    height: 100vh;
-}
-
-.hero {
-    height: 100vh;
-    display: flex;
-    user-select: none;
-    align-items: center;
-    padding-left: 5px;
-   
-}
-
-.content {
-  position: absolute;
-  top: 40px;
-  left: 15px;
-}
-.content h1 {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.content h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.content p {
-    max-width: 600px;
-    color: rgb(158, 159, 161);
-    line-height: 1.6;
-}
-
-.highlight {
-    color: #8b5e3c;
-}
-
-/* PESAN END */
 
 /* HAMBURGER */
 .menu-container {
